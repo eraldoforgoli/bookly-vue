@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
-import Books from "./views/Books.vue";
+import Book from "./views/Book.vue";
 import Upload from "./views/Upload.vue";
 
 Vue.use(Router);
@@ -16,9 +16,9 @@ export default new Router({
       component: Home
     },
     {
-      path: "/books/:bookID",
-      name: "Books",
-      component: Books,
+      path: "/book/:bookID",
+      name: "Book",
+      component: Book,
       props: true
     },
     {

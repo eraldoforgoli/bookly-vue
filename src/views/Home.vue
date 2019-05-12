@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row">
-      <Book v-for="book in books" :key="book._id" :book="book" class></Book>
+      <BookPreview v-for="book in books" :key="book._id" :book="book" class></BookPreview>
     </div>
   </div>
 </template>
@@ -9,18 +9,115 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
-import Book from "@/components/Book.vue";
+import BookPreview from "@/components/BookPreview.vue";
 import axios from "axios";
 
 export default {
   name: "home",
   components: {
     HelloWorld,
-    Book
+    BookPreview
   },
   data() {
     return {
-      books: []
+      books: [
+        {
+          _id: "5cd7e93129048e34ebfb888a",
+          name: "gezim",
+          date: "dummy",
+          genre: "lorem",
+          price: "ipsum",
+          rating: "12.4",
+          nr_of_votes: "45",
+          photo_src: "demoImage.png",
+          author: "test",
+          desc: "oegnrweugnwengveuwgvuwegvnuewnbgwnuigvewuinguiowegnneiwgfvnw"
+        },
+        {
+          _id: "5cd7e93129048e34ebfb888a",
+          name: "gezim",
+          date: "dummy",
+          genre: "lorem",
+          price: "ipsum",
+          rating: "12.4",
+          nr_of_votes: "45",
+          photo_src: "demoImage.png",
+          author: "test",
+          desc: "oegnrweugnwengveuwgvuwegvnuewnbgwnuigvewuinguiowegnneiwgfvnw"
+        },
+        {
+          _id: "5cd7e93129048e34ebfb888a",
+          name: "gezim",
+          date: "dummy",
+          genre: "lorem",
+          price: "ipsum",
+          rating: "12.4",
+          nr_of_votes: "45",
+          photo_src: "demoImage.png",
+          author: "test",
+          desc: "oegnrweugnwengveuwgvuwegvnuewnbgwnuigvewuinguiowegnneiwgfvnw"
+        },
+        {
+          _id: "5cd7e93129048e34ebfb888a",
+          name: "gezim",
+          date: "dummy",
+          genre: "lorem",
+          price: "ipsum",
+          rating: "12.4",
+          nr_of_votes: "45",
+          photo_src: "demoImage.png",
+          author: "test",
+          desc: "oegnrweugnwengveuwgvuwegvnuewnbgwnuigvewuinguiowegnneiwgfvnw"
+        },
+        {
+          _id: "5cd7e93129048e34ebfb888a",
+          name: "gezim",
+          date: "dummy",
+          genre: "lorem",
+          price: "ipsum",
+          rating: "12.4",
+          nr_of_votes: "45",
+          photo_src: "demoImage.png",
+          author: "test",
+          desc: "oegnrweugnwengveuwgvuwegvnuewnbgwnuigvewuinguiowegnneiwgfvnw"
+        },
+        {
+          _id: "5cd7e93129048e34ebfb888a",
+          name: "gezim",
+          date: "dummy",
+          genre: "lorem",
+          price: "ipsum",
+          rating: "12.4",
+          nr_of_votes: "45",
+          photo_src: "demoImage.png",
+          author: "test",
+          desc: "oegnrweugnwengveuwgvuwegvnuewnbgwnuigvewuinguiowegnneiwgfvnw"
+        },
+        {
+          _id: "5cd7e93129048e34ebfb888a",
+          name: "gezim",
+          date: "dummy",
+          genre: "lorem",
+          price: "ipsum",
+          rating: "12.4",
+          nr_of_votes: "45",
+          photo_src: "demoImage.png",
+          author: "test",
+          desc: "oegnrweugnwengveuwgvuwegvnuewnbgwnuigvewuinguiowegnneiwgfvnw"
+        },
+        {
+          _id: "5cd7e93129048e34ebfb888a",
+          name: "gezim",
+          date: "dummy",
+          genre: "lorem",
+          price: "ipsum",
+          rating: "12.4",
+          nr_of_votes: "45",
+          photo_src: "demoImage.png",
+          author: "test",
+          desc: "oegnrweugnwengveuwgvuwegvnuewnbgwnuigvewuinguiowegnneiwgfvnw"
+        }
+      ]
     };
   },
   methods: {

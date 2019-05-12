@@ -1,18 +1,18 @@
 <template>
-  <div class="container mt-5">
+  <div class="container">
     <div class="row center">
-      <div class="col-7">
+      <div class="mb-2">
+        <span class="uploadHeader">Upload Book</span>
+      </div>
+      <div class="col-12">
         <form class="form-horizontal">
           <div class="form-group">
-            <label>Title:</label>
             <input type="text" class="form-control" placeholder="Enter Title" v-model="title">
           </div>
           <div class="form-group">
-            <label>Author:</label>
             <input type="text" class="form-control" placeholder="Enter Author" v-model="author">
           </div>
           <div class="form-group">
-            <label>Description:</label>
             <textarea
               type="text"
               class="form-control"
@@ -21,23 +21,19 @@
             ></textarea>
           </div>
           <div class="form-group">
-            <label>Genre:</label>
             <input type="text" class="form-control" placeholder="Enter Genre" v-model="genre">
           </div>
           <div class="form-group">
-            <label>Price:</label>
             <input type="number" class="form-control" placeholder="Enter Price" v-model="price">
           </div>
-          <div class="form-group">
-            <v-layout row wrap>
-              <v-flex xs12 sm6>
-                <v-date-picker v-model="date" color="blue lighten-1"></v-date-picker>
-              </v-flex>
-            </v-layout>
+          <div class="form-group center">
+            <v-flex xs12 sm6>
+              <v-date-picker v-model="date" color="blue lighten-1"></v-date-picker>
+            </v-flex>
           </div>
           <div class="form-group">
             <label class="file-upload btn btn-primary">
-              Browse for file ...
+              {{file != "" ? file.name : "Browse for file"}}
               <input
                 type="file"
                 name="file"
@@ -49,7 +45,7 @@
           </div>
         </form>
         <div>
-          <button class="btn btn-primary" v-on:click="submitFile()">Submit</button>
+          <button class="btn btn-primary submit-button" v-on:click="submitFile()">Submit</button>
         </div>
       </div>
     </div>
@@ -75,12 +71,7 @@ export default {
   },
   methods: {
     submitFile() {
-      if (
-        this.file != "" &&
-        this.file != null &&
-        this.author != null &&
-        this.title != null
-      ) {
+      if (this.allFieldsHaveData()) {
         let formData = new FormData();
         formData.append("file", this.file);
         formData.append("author", this.author);
@@ -111,12 +102,35 @@ export default {
     },
     handleFileUpload() {
       this.file = this.$refs.file.files[0];
+    },
+    allFieldsHaveData() {
+      if (
+        this.author != null &&
+        this.author != "" &&
+        this.date != null &&
+        this.date != "" &&
+        this.description != null &&
+        this.description != "" &&
+        this.title != null &&
+        this.title != "" &&
+        this.genre != null &&
+        this.genre != "" &&
+        this.price != null &&
+        this.price != "" &&
+        this.file != null &&
+        this.file != "" &&
+        this.file != undefined
+      )
+        return true;
+      return false;
     }
   }
 };
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
+
 [hidden] {
   display: none !important;
 }
@@ -124,5 +138,44 @@ export default {
 .center {
   justify-content: space-around;
   align-items: center;
+}
+
+label {
+  display: inline-block;
+  width: 140px;
+  text-align: right;
+}
+
+.form-control {
+  display: inline !important;
+  width: 71% !important;
+}
+
+.center {
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  float: none;
+}
+
+.uploadHeader {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 36px;
+  /* identical to box height, or 120% */
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+
+.submit-button:hover {
+  background-color: green !important;
+  opacity: none !important;
+  outline: none !important;
+
+  box-shadow: none !important;
 }
 </style>
