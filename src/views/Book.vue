@@ -50,8 +50,9 @@ export default {
   },
   methods: {
     getBookData() {
+      console.log(`${process.env.VUE_APP_ALL_BOOKS_API}/singleBookData`);
       axios
-        .post("https://7b9dae50.ngrok.io/singleBookData", {
+        .post(`${process.env.VUE_APP_ALL_BOOKS_API}/singleBookData`, {
           id: this.bookID
         })
         .then(response => {

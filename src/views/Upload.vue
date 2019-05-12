@@ -84,7 +84,7 @@ export default {
         formData.append("rating", this.rating);
 
         axios
-          .post("https://7b9dae50.ngrok.io/upload", formData, {
+          .post(`${process.env.VUE_APP_ALL_BOOKS_API}/upload`, formData, {
             headers: {
               "Content-Type": "multipart/form-data"
             }

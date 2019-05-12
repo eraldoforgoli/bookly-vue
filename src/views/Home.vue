@@ -123,7 +123,7 @@ export default {
   methods: {
     getAllBooks() {
       axios
-        .get("https://7b9dae50.ngrok.io/allbooks")
+        .get(`${process.env.VUE_APP_ALL_BOOKS_API}/allbooks`)
         .then(response => {
           console.log(response.data);
           this.books = response.data;
