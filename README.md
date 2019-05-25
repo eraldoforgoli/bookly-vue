@@ -10,20 +10,29 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### Directory tree
+.
+├── babel.config.js
+├── Dockerfile
+├── package.json
+├── package-lock.json
+├── public
+│   ├── favicon.ico
+│   └── index.html
+├── README.md
+└── src
+    ├── App.vue
+    ├── assets
+    │   ├── demoImage.png
+    │   └── logo.png
+    ├── components
+    │   ├── BookPreview.vue
+    │   └── NavDrawer.vue
+    ├── main.js
+    ├── router.js
+    └── views
+        ├── About.vue
+        ├── Book.vue
+        ├── Home.vue
+        └── Upload.vue
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
