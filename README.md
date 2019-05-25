@@ -11,6 +11,7 @@ npm run serve
 ```
 
 ### Directory tree
+```
 .
 ├── babel.config.js
 ├── Dockerfile
@@ -35,4 +36,5 @@ npm run serve
         ├── Book.vue
         ├── Home.vue
         └── Upload.vue
+       ```
 
